@@ -3,14 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>home</title>
-<link rel="stylesheet" href="style.css" type="text/css"></style>
+<title>home
+</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+</style>
 </head>
 <body>
+<script src="main.js" defer></script>
 <main>
-<form class="search-form" action="https://duckduckgo.com/" method="get">
-  <input type="search" name="q" placeholder="search">
-  <input type="submit" name="submit" value="検索”>
+<form action="https://duckduckgo.com/" method="get">
+  <input id="search-form" type="search" name="q" placeholder="search">
 </form>
+<div class="engine">
+<button type="button" onclick="ddg();">
+  <svg width="10" height="10"><circle cx="3" cy="3" r="3" fill="blue" /></svg>
+  duckduckgo
+</button>
+<button type="button" onclick="chatgpt();">
+  <svg width="10" height="10"><circle cx="3" cy="3" r="3" fill="blue" /></svg>
+  ChatGPT
+</button>
+<button type="button" onclick="twitter();">
+  <svg width="10" height="10"><circle cx="3" cy="3" r="3" fill="blue" /></svg>
+  Twitter(X)
+</button>
+<button type="button" onclick="niconico();">
+  <svg width="10" height="10"><circle cx="3" cy="3" r="3" fill="blue" /></svg>
+  niconico
+</button>
+</div>
 </main>
 </body>

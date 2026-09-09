@@ -8,6 +8,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction:column;
+  gap: 32px;
   background: #e0e0e0;
 }
 
@@ -18,9 +20,38 @@ input {
     appearance: none;
     width: 512px;
     padding: 24px;
-    border-radius: 0px;
     background: #e0e0e0;
     box-shadow: inset 5px 5px 10px #b8b8b8,
             inset -5px -5px 10px #ffffff;
     font-size:16px;
+}
+button {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  appearance: none;
+  width: 128px;
+  height: 50px;
+  cursor: pointer;
+  background: #e0e0e0;
+  box-shadow: 2px 2px 5px #b8b8b8,
+             -5px -5px 10px #ffffffff;
+  font-size: 16px;
+}
+button:focus {
+  text-decoration:underline;
+  color:#888888;
+  box-shadow: inset 5px 5px 10px #b8b8b8,
+            inset -5px -5px 10px #ffffff;
+}
+svg {
+  display:none;
+}
+button:focus-visible svg{
+  display:inline;
+}
+.engine {
+  display: flex;
+  flex-direction:row;
+  gap: 16px;
 }
