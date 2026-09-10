@@ -1,0 +1,32 @@
+[
+  {"title":"YouTube",
+    "uri":"https://youtube.com"
+  },
+  {"title":"niconico",
+    "uri":"https://nicovideo.jp"
+  },
+  {"title":"Amazon",
+    "uri":"https://amazon.com"
+  },
+  {"title":"Github",
+    "uri":"https://github.com"
+  },
+  {"title":"Claude",
+    "uri":"https://claude.ai/"
+  },
+  {"title":"ChatGPT",
+    "uri":"https://chatgpt.com"
+  },
+  {"title":"Gemini",
+    "uri":"gemini.google.com"
+  },
+  {"title":"map",
+    "uri":"https://www.openstreetmap.org"
+  },
+  {"title":"Gmail",
+    "uri":"https://mail.google.com"
+  },
+  {"title":"archwiki",
+    "uri":"https://wiki.archlinux.org"
+  }
+]

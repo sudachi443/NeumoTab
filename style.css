@@ -68,7 +68,7 @@ form:focus-within .pointer{
   flex-wrap: wrap;
   gap: 16px;
 }
-.dashboard {
+#dashboard {
   display:block;
   box-sizing: border-box;
   border: none;
@@ -90,33 +90,55 @@ form:focus-within .pointer{
 
 }
 
-.dashboard:focus-within , .dashboard:hover {
+#dashboard:focus-within , #dashboard:hover {
   display:flex;
   height: 256px;
   padding:24px;
   width:240px;
   flex-direction:row;
-  gap: 24px;
   overflow-y: scroll;
   flex-wrap: wrap;
+  gap:24px;  
+  align-content: flex-start;
   box-shadow: inset 5px 5px 10px #b8b8b8,
             inset -5px -5px 10px #ffffff;
 }
 .shortcut {
   opacity: 0;
   visibility: hidden;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  appearance: none;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  border-radius:100%;
+  background-color:#FFFFFF;
+  font-size:8px;
 }
-.dashboard:focus-within .shortcut,
-.dashboard:hover .shortcut {
-  animation: appear 0.2s ease 0.15s forwards;
+#dashboard:focus-within .shortcut,
+#dashboard:hover .shortcut {
+  animation: appear 0.2s ease 0.2s forwards;
 }
 #fs {
   display:block;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    font-size: 8px;
 }
-.dashboard:focus-within #fs,
-.dashboard:hover #fs {
+#dashboard:hover #fs,
+#dashboard:focus-within #fs {
   opacity:0;
-  animation: appear 0.2s ease 0.15s forwards;
+  visibility:none;
+  animation:appear 0.2s ease 0.2s forwards;
 }
 @keyframes appear {
   from {
@@ -129,4 +151,10 @@ form:focus-within .pointer{
     visibility: visible;
     transform: translateY(0);
   }
+}
+.shortcut:focus,.shortcut:hover {
+  border:2px solid #0000FF;
+}
+#fs:focus,#fs:hover {
+  border:2px solid #0000FF;
 }
