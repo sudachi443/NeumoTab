@@ -11,19 +11,27 @@ main {
   flex-direction:column;
   gap: 32px;
   background: #e0e0e0;
+
 }
 
-input {
+form {
     box-sizing: border-box;
     border: none;
     outline: none;
     appearance: none;
-    width: 512px;
+    width: 560px;
     padding: 24px;
     background: #e0e0e0;
     box-shadow: inset 5px 5px 10px #b8b8b8,
             inset -5px -5px 10px #ffffff;
     font-size:16px;
+}
+input {
+  width:95%;
+  border:none;
+  outline:none;
+  font-size:16px;
+  background:none;
 }
 button {
   box-sizing: border-box;
@@ -44,14 +52,79 @@ button:focus {
   box-shadow: inset 5px 5px 10px #b8b8b8,
             inset -5px -5px 10px #ffffff;
 }
-svg {
+.pointer {
   display:none;
 }
-button:focus-visible svg{
+button:focus-visible .pointer{
+  display:inline;
+}
+form:focus-within .pointer{
   display:inline;
 }
 .engine {
   display: flex;
   flex-direction:row;
   gap: 16px;
+}
+.dashboard {
+  display:block;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  position:fixed;
+  width:64px;
+  height:64px;
+  padding:8px;
+  right:32px;
+  top:43%;
+  background: #e0e0e0;
+  transform-origin:top right;
+  box-shadow: inset 5px 5px 10px #b8b8b8,
+            inset -5px -5px 10px #ffffff;
+  transition:
+  width 0.2s ease,
+  height 0.2s ease,
+  box-shadow 0.1s ease;
+
+}
+
+.dashboard:focus-within , .dashboard:hover {
+  display:flex;
+  height: 256px;
+  padding:24px;
+  width:240px;
+  flex-direction:row;
+  gap: 24px;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  box-shadow: inset 5px 5px 10px #b8b8b8,
+            inset -5px -5px 10px #ffffff;
+}
+.shortcut {
+  opacity: 0;
+  visibility: hidden;
+}
+.dashboard:focus-within .shortcut,
+.dashboard:hover .shortcut {
+  animation: appear 0.2s ease 0.15s forwards;
+}
+#fs {
+  display:block;
+}
+.dashboard:focus-within #fs,
+.dashboard:hover #fs {
+  opacity:0;
+  animation: appear 0.2s ease 0.15s forwards;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }

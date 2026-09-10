@@ -1,5 +1,7 @@
 const searchInput = document.getElementById("search-form");
 
+const button = document.acti
+
 searchInput.addEventListener('input', () => {
   const keyword = searchInput.value;
   console.log(keyword);
