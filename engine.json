@@ -1,0 +1,17 @@
+[
+  {
+    "name":"duckduckgo",
+    "link":"https://duckduckgo.com/?q="
+  },
+  {
+    "name":"ChatGPT",
+    "link":"https://chatgpt.com/?q="
+  },
+  {
+    "name":"Twitter(X)",
+    "link":"https://x.com/search?q="
+  },
+  {"name":"Wikipedia",
+    "link":"https://wikipedia.org/w/index.php?search="
+  }
+]

@@ -33,7 +33,7 @@ input {
   font-size:16px;
   background:none;
 }
-button {
+.searchengine {
   box-sizing: border-box;
   border: none;
   outline: none;
@@ -46,7 +46,7 @@ button {
              -5px -5px 10px #ffffffff;
   font-size: 16px;
 }
-button:focus {
+.searchengine:focus {
   text-decoration:underline;
   color:#888888;
   box-shadow: inset 5px 5px 10px #b8b8b8,
@@ -61,9 +61,11 @@ button:focus-visible .pointer{
 form:focus-within .pointer{
   display:inline;
 }
-.engine {
+#engine {
   display: flex;
+  width: 560px;
   flex-direction:row;
+  flex-wrap: wrap;
   gap: 16px;
 }
 .dashboard {
