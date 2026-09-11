@@ -163,11 +163,12 @@ document.addEventListener("focusin", (e) => {
     block: "nearest"
   });
 });
-document.addEventListener('keydown', (event)=>{
-  console.log(event.key);
-  if (event.key === 'Escape'|| event.key==='/'){
+document.addEventListener("keydown", (event) => {
+  if (event.key === "/" && document.activeElement === searchInput) {
+    return;
+  }
+  if (event.key === "Escape" || event.key === "/") {
     event.preventDefault();
-    document.getElementById("search-form").focus();
-  };
+    searchInput.focus();
+  }
 });
-
