@@ -114,13 +114,13 @@ form:focus-within .pointer{
   height: 48px;
   padding: 8px;
   border-radius:100%;
-  background-color:#FFFFFF;
+  background-color:rgba(224,224,224,0);
   font-size:8px;
   align-items:center;
 }
 #dashboard:focus-within .shortcut,
 #dashboard:hover .shortcut {
-  animation: appear 0.2s ease 0.2s forwards;
+  animation: appear 0.1s ease 0.17s forwards;
 }
 #fs {
   display:block;
@@ -132,7 +132,7 @@ form:focus-within .pointer{
     height: 48px;
     padding: 8px;
     border-radius: 100%;
-    background-color: #ffffff;
+    background-color:rgba(224,224,224,0);
     font-size: 8px;
     align-items:center;
 }
@@ -140,7 +140,7 @@ form:focus-within .pointer{
 #dashboard:focus-within #fs {
   opacity:0;
   visibility:none;
-  animation:appear 0.2s ease 0.2s forwards;
+  animation:appear 0.1s ease 0.17s forwards;
 }
 @keyframes appear {
   from {
