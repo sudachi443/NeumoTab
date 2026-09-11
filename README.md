@@ -11,7 +11,7 @@ change your default newpage better!!!
 show only what you want and enhance your life.  
 (TODO:add screenshot)
 
-## Fratures
+## Features
 - search from your input
 - change search engine from button
 - shortcut
