@@ -116,6 +116,7 @@ form:focus-within .pointer{
   border-radius:100%;
   background-color:#FFFFFF;
   font-size:8px;
+  align-items:center;
 }
 #dashboard:focus-within .shortcut,
 #dashboard:hover .shortcut {
@@ -133,6 +134,7 @@ form:focus-within .pointer{
     border-radius: 100%;
     background-color: #ffffff;
     font-size: 8px;
+    align-items:center;
 }
 #dashboard:hover #fs,
 #dashboard:focus-within #fs {
