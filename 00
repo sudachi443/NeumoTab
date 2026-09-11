@@ -51,15 +51,15 @@ async function loadshortcut() {
         <span>${title}</span>
     `;
     button.addEventListener("click", () => {
-      const url = shortcut.uri;
-      window.location.href = url;
+        const url = shortcut.uri;
+        window.location.href = url;
     });
     shortcuts.appendChild(button);
   };
 };
 
 
-async function default_engine(){
+async function engine_default(){
   const data = await fetch ("engine.json").then(i => i.json());
   const data_converted = JSON.stringify(data);
   localStorage.removeItem('engines');
@@ -67,7 +67,7 @@ async function default_engine(){
   console.log("engine is default");
 };
 
-async function default_shortcut(){
+async function shortcut_default(){
   const data = await fetch ("shortcut.json").then(i => i.json());
   const data_converted = JSON.stringify(data);
   localStorage.removeItem('shortcuts');
@@ -77,10 +77,10 @@ async function default_shortcut(){
 
 async function createpage(){
   if (localStorage.getItem('engines') == null){ 
-    await default_engine();
+  await engine_default();
   };
   if (localStorage.getItem('shortcuts') == null){
-    await default_shortcut();
+  await shortcut_default();
   };
   loadengine();
   loadshortcut();
@@ -112,62 +112,10 @@ async function add_shortcut(title,uri){
 };
 
 async function remove_engine(name){
-  const jsons = localStorage.getItem('engines');
-  const data = JSON.parse(jsons);
-  const matchData = [];
-  var len = Object.keys(data).length;
-  for (let i = 0; i < len; i++){
-    const engine = data[i];
-    if (engine.name != name){
-      const add_data = {"name":engine.name,"link":engine.link};
-      matchData.push(add_data);
-    };
-  };
-  const newdata = JSON.stringify(matchData);
-  console.log("newdata of engine is here");
-  console.log(newdata);
-  localStorage.removeItem('engines');
-  localStorage.setItem('engines',newdata);
-};
-async function remove_shortcut(title){
   const jsons = localStorage.getItem('shortcuts');
   const data = JSON.parse(jsons);
-  const matchData = [];
-  var len = Object.keys(data).length;
-  for (let i = 0; i < len; i++){
-    const shortcut = data[i];
-    if (shortcut.title != title){
-      const add_data = {"title":shortcut.title,"uri":shortcut.uri};
-      matchData.push(add_data);
-    };
-  };
-  const newdata = JSON.stringify(matchData);
-  console.log("newdata of shortcut is here");
-  console.log(newdata);
-  localStorage.removeItem('shortcuts');
-  localStorage.setItem('shortcuts',newdata);
-};
-async function list_engine(){
-  const jsons = localStorage.getItem('engines');
-  console.log(jsons);
-};
-async function list_shortcut(){
-  const jsons = localStorage.getItem('shortcuts');
-  console.log(jsons);
-};
+  for 
+
+
 
 createpage();
-document.addEventListener("focusin", (e) => {
-  e.target.scrollIntoView({
-    behavior: "smooth",
-    block: "nearest"
-  });
-});
-document.addEventListener('keydown', (event)=>{
-  console.log(event.key);
-  if (event.key === 'Escape'|| event.key==='/'){
-    event.preventDefault();
-    document.getElementById("search-form").focus();
-  };
-});
-
