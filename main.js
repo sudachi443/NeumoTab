@@ -7,21 +7,19 @@ searchInput.addEventListener('input', () => {
   console.log(keyword);
 });
 
-function load_localstorage(key){
-  const jsons = localStorage.getItem(key);
-  const data = JSON.parse(jsons);
-  return data;
+async function load_storage(key){
+  const result = await chrome.storage.local.get(key);
+  return result[key];
 };
-
-function save_localstorage(key,json){
-  const data = JSON.stringify(json);
-  localStorage.removeItem(key);
-  localStorage.setItem(key,data);
-  return data;
+async function save_storage(key, data){
+  await chrome.storage.local.set({
+    [key]: data
+  });
+  const json = JSON.stringify(data);
+  return json
 };
-
-function loadengine() {
-  const data = load_localstorage('engines');
+async function loadengine() {
+  const data = await load_storage('engines');
   for (const engine of data) {
     const button = document.createElement("button");
     button.className = "searchengine";
@@ -40,9 +38,9 @@ function loadengine() {
     engines.appendChild(button);
   };
 };
-function loadshortcut() {
+async function loadshortcut() {
   const MAX_LENGTH = 10;
-  const data = load_localstorage('shortcuts');
+  const data = await load_storage('shortcuts');
   const len = Object.keys(data).length;
   for (let i = 0; i < len; i++){
     const button = document.createElement("button");
@@ -68,46 +66,48 @@ function loadshortcut() {
 };
 async function reset_engine(){
   const data = await fetch ("engine.json").then(i => i.json());
-  save_localstorage('engines',data);
+  await save_storage('engines',data);
   console.log("engine is default");
 };
 
 async function reset_shortcut(){
   const data = await fetch ("shortcut.json").then(i => i.json());
-  save_localstorage('shortcuts',data);
+  await save_storage('shortcuts',data);
   console.log("shortcut_default");
 };
 
 async function createpage(){
-  if (localStorage.getItem('engines') == null){ 
+  const engines = await load_storage('engines');
+  const shortcuts = await load_storage('shortcuts');
+  if (engines === undefined){ 
     await reset_engine();
   };
-  if (localStorage.getItem('shortcuts') == null){
+  if (shortcuts === undefined){
     await reset_shortcut();
   };
-  loadengine();
-  loadshortcut();
+  await loadengine();
+  await loadshortcut();
 };
-function add_engine(names,link){
-  const data = load_localstorage('engines');
+async function add_engine(names,link){
+  const data = await load_storage('engines');
   const adddata = 
     {"name":names , "link":link}
   data.push(adddata);
-  const newdata = save_localstorage('engines',data);
+  const newdata = await save_storage('engines',data);
   console.log("newdata of engine is here");
   console.log(newdata);
 };
-function add_shortcut(title,uri){
-  const data = load_localstorage('shortcuts');
+async function add_shortcut(title,uri){
+  const data = await load_storage('shortcuts');
   const adddata = 
     {"title":title , "uri":uri}
   data.push(adddata);
-  const newdata = save_localstorage('shortcuts',data);
+  const newdata = await save_storage('shortcuts',data);
   console.log("newdata of shortcut is here");
   console.log(newdata);
 };
-function remove_engine(name){
-  const data = load_localstorage('engines');
+async function remove_engine(name){
+  const data = await load_storage('engines');
   const matchData = [];
   const len = Object.keys(data).length;
   for (let i = 0; i < len; i++){
@@ -117,12 +117,12 @@ function remove_engine(name){
       matchData.push(add_data);
     };
   };
-  const newdata = save_localstorage('engines',matchData);
+  const newdata = await save_storage('engines',matchData);
   console.log("newdata of engine is here");
   console.log(newdata);
 };
-function remove_shortcut(title){
-  const data = load_localstorage('shortcuts');
+async function remove_shortcut(title){
+  const data = await load_storage('shortcuts');
   const matchData = [];
   const len = Object.keys(data).length;
   for (let i = 0; i < len; i++){
@@ -132,16 +132,16 @@ function remove_shortcut(title){
       matchData.push(add_data);
     };
   };
-  const newdata = save_localstorage("shortcuts",matchData);
+  const newdata = await save_storage("shortcuts",matchData);
   console.log("newdata of shortcut is here");
   console.log(newdata);
 };
-function list_engine(){
-  const jsons = localStorage.getItem('engines');
+async function list_engine(){
+  const jsons = await load_storage('engines');
   console.log(jsons);
 };
-function list_shortcut(){
-  const jsons = localStorage.getItem('shortcuts');
+async function list_shortcut(){
+  const jsons = await load_storage('shortcuts');
   console.log(jsons);
 };
 
