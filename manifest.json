@@ -9,5 +9,9 @@
   ],
   "chrome_url_overrides": {
     "newtab": "homepage.html"
+  },
+   "options_ui": {
+    "page": "setting.html",
+    "open_in_tab": false
   }
 }
