@@ -2,9 +2,9 @@
 for your browser
 
 # TODO
-- create json file to apply firefox/chromium browser
 - change searchform to support links(e.g.http,about,file ...)
-- feature of import/export jsonfile
+- change json files for public
+- create logo
 
 ## Overview
 change your default newpage better!!!  
