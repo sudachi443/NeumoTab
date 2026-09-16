@@ -160,34 +160,3 @@ form:focus-within .pointer{
 #fs:focus,#fs:hover {
   border:2px solid #0000FF;
 }
-.container {
-  position:fixed;
-  width: 160px;
-  height: 80px;
-  background: #e0e0e0;
-  box-shadow: inset 5px 5px 10px #b8b8b8,
-            inset -5px -5px 10px #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction:column;
-  top:16px;
-  right:16px;
-  gap:0px;
-  padding:8px;
-}
-.clock {
-  padding:0px;
-  margin:0px;
-  text-align: center;
-}
-.clock-date {
-  margin:0px;
-  padding:0px;
-  font-size: 12px;
-}
-.clock-time {
-  margin:0px;
-  padding:0px;
-  font-size: 24px;
-}
