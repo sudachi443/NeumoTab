@@ -11,12 +11,12 @@ async function save_storage(key, data){
 };
 
 async function reset_engine(){
-  const data = await fetch ("engine.json").then(i => i.json());
+  const data = await fetch ("/json/engine.json").then(i => i.json());
   await save_storage('engines',data);
   console.log("engine is default");
 };
 async function reset_shortcut(){
-  const data = await fetch ("shortcut.json").then(i => i.json());
+  const data = await fetch ("/json/shortcut.json").then(i => i.json());
   await save_storage('shortcuts',data);
   console.log("shortcut_default");
 };
