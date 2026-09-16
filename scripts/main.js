@@ -14,11 +14,13 @@ async function reset_engine(){
   const data = await fetch ("/json/engine.json").then(i => i.json());
   await save_storage('engines',data);
   console.log("engine is default");
+  return data;
 };
 async function reset_shortcut(){
   const data = await fetch ("/json/shortcut.json").then(i => i.json());
   await save_storage('shortcuts',data);
   console.log("shortcut_default");
+  return data;
 };
 
 async function add_engine(names,link){
@@ -29,6 +31,7 @@ async function add_engine(names,link){
   const newdata = await save_storage('engines',data);
   console.log("newdata of engine is here");
   console.log(newdata);
+  return newdata;
 };
 async function add_shortcut(title,uri){
   const data = await load_storage('shortcuts');
@@ -38,6 +41,7 @@ async function add_shortcut(title,uri){
   const newdata = await save_storage('shortcuts',data);
   console.log("newdata of shortcut is here");
   console.log(newdata);
+  return newdata;
 };
 
 async function remove_engine(name){
@@ -54,6 +58,7 @@ async function remove_engine(name){
   const newdata = await save_storage('engines',matchData);
   console.log("newdata of engine is here");
   console.log(newdata);
+  return newdata;
 };
 async function remove_shortcut(title){
   const data = await load_storage('shortcuts');
@@ -69,13 +74,16 @@ async function remove_shortcut(title){
   const newdata = await save_storage("shortcuts",matchData);
   console.log("newdata of shortcut is here");
   console.log(newdata);
+  return newdata;
 };
 
 async function list_engine(){
   const jsons = await load_storage('engines');
   console.log(jsons);
+  return jsons;
 };
 async function list_shortcut(){
   const jsons = await load_storage('shortcuts');
   console.log(jsons);
+  return jsons
 };

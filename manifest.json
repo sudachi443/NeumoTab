@@ -12,6 +12,10 @@
   },
   "action": {
     "default_title" : "NeumoTab",
-    "default_popup" : "popup.html"
+    "default_popup" : "setting.html"
+  },
+     "options_ui": {
+    "page": "setting.html",
+    "open_in_tab": true
   }
 }

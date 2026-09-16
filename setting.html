@@ -3,18 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>home
-</title>
+<title>setting</title>
+<style>
+main{
+  padding:0px 16px 16px 16px;
+  background: #e0e0e0;
+  height:512px;
+  width:316px;
+  overflow-y: scroll;
+}
+h1{
+  padding:16px;
+  box-shadow: inset 5px 5px 10px #b8b8b8,
+            inset -5px -5px 10px #ffffff;
+  text-align:center;
+}
+input {
+  width:100%;
+}
+</style>
 </head>
 <body>
-<h2>add_link</h2>
-<h3>search-engine</h3>
-<form id = "add_engine">
-  name link<br>
-  <input id="add_engine_name" type="text" placeholder="name">
-  <input id = "add_engine_link" type="url" placeholder="link"><br>
+<main>
+<h1>NeumoTab settings</h1>
+<h2>shortcut</h2>
+<h3>add(title,uri)</h3>
+<form id = "add_shortcut">
+  <input id="add_shortcut_title" type="text" placeholder="title(ex:niconico)">
+  <input id = "add_shortcut_uri" type="url" placeholder="uri(ex:https://nicovideo.jp/ranking"><br>
   <button type="submit">add</button>
 </form>
+<h3>remove(title)</h3>
+<form id = "remove_shortcut">
+  <input id="remove_shortcut_title" type="text" placeholder="title(ex:niconico)"><br>
+  <button type="submit">add</button>
+</form>
+<br>
+<form id = "reset_shortcut">
+  <button type ="submit">reset shortcut!</button>
+</form>
+<pre id = "result_shortcut"><code>result:</code></pre>
+
+<hr>
+
+<h2>engine</h2>
+<h3>add(name,link)</h3>
+<form id = "add_engine">
+  <input id="add_engine_name" type="text" placeholder="name(ex:google)">
+  <input id = "add_engine_link" type="url" placeholder="link(ex:https://google.com/search?q="><br>
+  <button type="submit">add</button>
+</form>
+<h3>remove(name)</h3>
+<form id = "remove_engine">
+  <input id="remove_engine_name" type="text" placeholder="name(ex:google)"><br>
+  <button type="submit">add</button>
+</form><br>
+<form id = "reset_engine">
+  <button type ="submit">reset engine!</button>
+</form>
+<pre id ="result_engine"><code>result:</code></pre>
 <script src= 'scripts/main.js' defer></script>
 <script src= '/scripts/settig.js' defer></script>
 </body>
