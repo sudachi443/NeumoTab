@@ -28,7 +28,7 @@ document.getElementById("add_engine").addEventListener("submit", async (event) =
     return 0;
   }else {
     await add_engine(name,link);
-    result_shortcut.textContent = link + " is saved as "+name+" !";
+    result_engine.textContent = link + " is saved as "+name+" !";
     event.target.reset();
   }
 });
@@ -48,12 +48,12 @@ document.getElementById("remove_shortcut").addEventListener("submit", async (eve
 document.getElementById("remove_engine").addEventListener("submit", async (event) => {
   event.preventDefault();
   const name = remove_engine_name.value;
-  alert("please enter name");
   if (name == "") { 
+    alert("please enter name");
     return 0;
   }else {
     await remove_engine(name);
-    result_shortcut.textContent = name +" is removed!";
+    result_engine.textContent = name +" is removed!";
   event.target.reset();
   }
 });
@@ -62,7 +62,7 @@ document.getElementById("reset_shortcut").addEventListener("submit",async (event
   event.preventDefault();
   if (confirm("is it ok to reset shortcut?")){
     await reset_shortcut();
-    result_shortcut.textContent ="shortcut reseted";
+    result_shortcut.textContent ="shortcut reset";
   }else{
   }
   event.target.reset();
@@ -71,7 +71,7 @@ document.getElementById("reset_engine").addEventListener("submit",async (event) 
   event.preventDefault();
   if (confirm("is it ok to reset engine?")){
     await reset_engine();
-    result_engine.textContent ="engine reseted";
+    result_engine.textContent ="engine reset";
   }else{
   }
   event.target.reset();
