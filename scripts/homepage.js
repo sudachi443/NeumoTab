@@ -53,14 +53,6 @@ async function loadshortcut() {
 };
 
 async function createpage(){
-  const engines = await load_storage('engines');
-  const shortcuts = await load_storage('shortcuts');
-  if (engines === undefined){ 
-    await reset_engine();
-  };
-  if (shortcuts === undefined){
-    await reset_shortcut();
-  };
   await loadengine();
   await loadshortcut();
 };

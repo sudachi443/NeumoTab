@@ -87,3 +87,14 @@ async function list_shortcut(){
   console.log(jsons);
   return jsons
 };
+async function initialization_json(){
+  const engines = await load_storage('engines');
+  const shortcuts = await load_storage('shortcuts');
+  if (engines === undefined){ 
+    await reset_engine();
+  };
+  if (shortcuts === undefined){
+    await reset_shortcut();
+  };
+};
+initialization_json();
