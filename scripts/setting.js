@@ -1,4 +1,4 @@
-async function load_file(id,key){
+async function load_file(id,key,...requirekey){
   document.getElementById(id).addEventListener("change",async (event) => {
   const files = event.target.files;
   if (files.length === 0) {
@@ -6,14 +6,20 @@ async function load_file(id,key){
   }
   const file = files[0];
   console.log("read file...")
-  if (!file.type.startsWith("application/json")){
-    console.log("this file is not json")
-    document.getElementById(key).textContent = "select .json file"
-    return;
-  }
   try {
     const json = await file.text();
     const data = JSON.parse(json);
+    if (!Array.isArray(data)) {
+      throw new Error("JSON must be an array");
+    }
+    for (const check of data) {
+      for (const keys of requirekey) {
+        if (!(Object.hasOwn(check, keys))) {
+          throw new Error(`missing key: ${keys}`);
+        }
+        console.log(keys, check[keys]);
+      }
+    }
     console.log("succeed!");
     console.log(data);
     document.getElementById(key).textContent = "read your file!";
@@ -43,6 +49,6 @@ async function export_file(id,key){
 
 
 export_file("export_shortcut","shortcuts");
-load_file("import_shortcut","shortcuts");
+load_file("import_shortcut","shortcuts","title","uri");
 export_file("export_engine","engines");
-load_file("import_engine","engines");
+load_file("import_engine","engines","name","link");
