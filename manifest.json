@@ -4,18 +4,48 @@
   "version": "0.1.0",
   "description": "A minimal and customizable new tab page for your browser.",
   "homepage_url": "https://github.com/sudachi443/NeumoTab",
+
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+
   "permissions": [
     "storage"
   ],
+
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ],
+    "service_worker": "scripts/background.js"
+  },
+
+  "action": {
+    "default_title": "NeumoTab",
+    "default_popup": "popup.html"
+  },
+
+  "options_ui": {
+    "page": "setting.html",
+    "open_in_tab": false
+  },
+
   "chrome_url_overrides": {
     "newtab": "homepage.html"
   },
-  "action": {
-    "default_title" : "NeumoTab",
-    "default_popup" : "popup.html"
-  },
-     "options_ui": {
-    "page": "setting.html",
-    "open_in_tab": false
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@neumotab",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
   }
 }
