@@ -1,10 +1,12 @@
 const searchInput = document.getElementById("search-form");
 const engines = document.getElementById("engine");
 const shortcuts = document.getElementById("dashboard");
+
 searchInput.addEventListener('input', () => {
   const keyword = searchInput.value;
   console.log(keyword);
 });
+
 async function loadengine() {
   const data = await load_storage('engines');
   for (const engine of data) {
@@ -25,6 +27,7 @@ async function loadengine() {
     engines.appendChild(button);
   };
 };
+
 async function loadshortcut() {
   const MAX_LENGTH = 10;
   const data = await load_storage('shortcuts');
@@ -66,13 +69,37 @@ document.addEventListener("focusin", (e) => {
   });
 });
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown",async (event) => {
   if (event.key === "/" && document.activeElement === searchInput) {
     return;
+  }
+  if (event.key === "Enter" && document.activeElement === searchInput) {
+    event.preventDefault();
+    const data = await load_storage('engines');
+    const default_searchengine = data[0];
+    const keyword = searchInput.value;
+    let url;
+    if ( keyword.includes(':')){
+      url=keyword;
+    }else if (keyword.includes('.')) {
+      url = 'https://'+keyword;
+    }else{
+      url = default_searchengine.link+encodeURIComponent(keyword);
+    }
+    try {
+      new URL(url);
+      console.log(url);
+      window.location.href = url;
+    }catch(error){
+      url = default_searchengine.link+encodeURIComponent(keyword);
+      console.log(url);
+      window.location.href = (url);
+    }
   }
   if (event.key === "Escape" || event.key === "/") {
     event.preventDefault();
     searchInput.focus();
   }
 });
+
 

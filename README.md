@@ -1,9 +1,8 @@
 # NeumoTab
 A minimal and customizable new-tab page for your browser.
 ## TODO
-- change searchform to support links(e.g.http,about,file ...)
-- change json files for public
-- create logo
+> - change json files for public
+> - create logo
 
 ## Overview
 change your default newpage better!!!  
