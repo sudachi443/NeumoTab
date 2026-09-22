@@ -32,18 +32,12 @@ show only what you want and enhance your life.
 1. focus input form  
 1. select search method from engine list  
 
-> [!TIP]
-> keydown `Escape` or `/` to focus input form.
-> if you focus input form and press `Enter`, you can search on duckduckgo(TODO create change function.)
 
 ### shortcut
 1. focus or hover right box
 1. select shortcut
 
 ### change searchengine/shortcut
-> [!IMPORTANT]
-> Only complete links (links beginning with http://, etc.) may be used.
-
 #### CLI settings\(suggest\)
 1. press `F12` to open console
 1. you can use `add_shortcut("title","uri");` \/ `add_engine("name","link");` to add and `remove_shortcut("title");` \/ `remove_engine("name");` to remove  
@@ -58,15 +52,14 @@ show only what you want and enhance your life.
 
 ### import\/export settings
 1. open setting menu from popup or addon manager
-1. select what you want\(only support `.json` file\)
+1. select what you want\(only support JSON file\)
 
 > [!IMPORTANT]
-> Shortcut settings must be a JSON array containing objects with `title` and `uri` properties.
+> Shortcut settings must be a JSON array containing objects with `title` and `uri` properties.  
 > Engine settings must be a JSON array containing objects with `name` and `link` properties.
 
 > [!CAUTION]
 > NeumoTab trusts user-provided configuration. Malicious configuration may execute arbitrary JavaScript code.
-
 
 ### Console API
 
