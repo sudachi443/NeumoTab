@@ -43,8 +43,12 @@ async function loadshortcut() {
     button.type = "button";
     const string = shortcut.title;
     const title = string.length > MAX_LENGTH ? string.slice(0, MAX_LENGTH) + "..." : string;
+    const favicon_url = new URL(shortcut.uri).origin+"/favicon.ico";
+    const alt = title.substr(0,1).toUpperCase();
+    console.log(favicon_url);
     button.innerHTML = `
-        <img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(shortcut.uri)}" alt="${title}">
+        <img src="${favicon_url}" alt="${alt}" style="width:50%;height:50%;object-fit:contain;font-size:16px;">
+        <br>
         <span>${title}</span>
     `;
     button.addEventListener("click", () => {

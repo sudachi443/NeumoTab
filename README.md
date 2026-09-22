@@ -17,8 +17,6 @@ show only what you want and enhance your life.
 - import/export your settings(json)
 - Console API
 - Keyboard-focused navigation
-> [!NOTE]
-> use google favicon API to get favicon.
 ## Tech stacks
 - html
 - css
