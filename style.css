@@ -139,7 +139,7 @@ form:focus-within .pointer{
 #dashboard:hover #fs,
 #dashboard:focus-within #fs {
   opacity:0;
-  visibility:none;
+  visibility:hidden;
   animation:appear 0.1s ease 0.17s forwards;
 }
 @keyframes appear {
