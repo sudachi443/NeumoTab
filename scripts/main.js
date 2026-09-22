@@ -23,8 +23,28 @@ async function reset_shortcut(){
   return data;
 };
 
+function url_checker(keyword){
+  let url;
+  if ( keyword.includes(':')){
+    url=keyword;
+  }else if (keyword.includes('.')) {
+    url = 'https://'+keyword;
+  }
+  try {
+    new URL(url);
+  }catch(error){
+    url = "";
+  }
+  return url;
+};
+
 async function add_engine(names,link){
   const data = await load_storage('engines');
+  const links = url_checker(link);
+  if (!links){
+    console.log("Invalid link");
+    return "";
+  }
   const adddata = 
     {"name":names , "link":link}
   data.push(adddata);
@@ -35,6 +55,11 @@ async function add_engine(names,link){
 };
 async function add_shortcut(title,uri){
   const data = await load_storage('shortcuts');
+  const links = url_checker(uri);
+  if (!links){
+    console.log("Invalid link");
+    return "";
+  }
   const adddata = 
     {"title":title , "uri":uri}
   data.push(adddata);

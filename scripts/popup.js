@@ -6,16 +6,23 @@ const remove_shortcut_title = document.getElementById("remove_shortcut_title");
 const remove_engine_name = document.getElementById("remove_engine_name");
 const result_shortcut = document.getElementById("result_shortcut");
 const result_engine = document.getElementById("result_engine");
+
 document.getElementById("add_shortcut").addEventListener("submit", async (event) => {
   event.preventDefault();
   const title = add_shortcut_title.value;
   const uri = add_shortcut_uri.value;
+  const url = url_checker(uri);
   if (title == "" || uri == "") { 
     alert("please enter title and uri");
+    result_shortcut.textContent = "no title or uri";
+    return 0;
+  }else if (!url){
+    alert("Invalid uri");
+    result_shortcut.textContent = "Invalid uri";
     return 0;
   }else {
-    await add_shortcut(title,uri);
-    result_shortcut.textContent = uri + " is saved as "+title+" !";
+    await add_shortcut(title,url);
+    result_shortcut.textContent = url + " is saved as "+title+" !";
     event.target.reset();
   }
 });
@@ -23,8 +30,14 @@ document.getElementById("add_engine").addEventListener("submit", async (event) =
   event.preventDefault();
   const name = add_engine_name.value;
   const link = add_engine_link.value;
+  const links = url_checker(link);
   if (name == "" || link == "") { 
     alert("please enter name and link");
+    result_engine.textContent = "no name or link";
+    return 0;
+  }else if (!links){
+    alert("Invalid link");
+    result_engine.textContent = "Invalid link";
     return 0;
   }else {
     await add_engine(name,link);
@@ -38,6 +51,7 @@ document.getElementById("remove_shortcut").addEventListener("submit", async (eve
   const title = remove_shortcut_title.value;
   if (title == "") { 
     alert("please enter title");
+    result_shortcut.textContent = "no title";
     return 0;
   }else {
     await remove_shortcut(title);
@@ -50,6 +64,7 @@ document.getElementById("remove_engine").addEventListener("submit", async (event
   const name = remove_engine_name.value;
   if (name == "") { 
     alert("please enter name");
+    result_engine.textContent = "no name";
     return 0;
   }else {
     await remove_engine(name);
