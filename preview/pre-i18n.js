@@ -22,9 +22,10 @@ async function apply_locale(locale){
     }
   });
 }
+const params = new URLSearchParams(location.search);
 
-const locale = navigator.language.startsWith("ja")
-  ? "ja"
-  : "en";
+const locale =
+  params.get("lang") ??
+  (navigator.language.startsWith("ja") ? "ja" : "en");
 
-apply_locale(locale);
+const i18n_ready = apply_locale(locale);
