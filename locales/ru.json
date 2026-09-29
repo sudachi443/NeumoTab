@@ -1,0 +1,19 @@
+{
+  "search": "crwdns70:0crwdne70:0",
+  "GUI_links": "crwdns38:0crwdne38:0",
+  "import/export": "crwdns40:0crwdne40:0",
+  "import/export file": "crwdns42:0crwdne42:0",
+  "shortcut": "crwdns44:0crwdne44:0",
+  "result:": "crwdns46:0crwdne46:0",
+  "download_setting": "crwdns48:0crwdne48:0",
+  "engine": "crwdns50:0crwdne50:0",
+  "import/export_link": "crwdns52:0crwdne52:0",
+  "add(title,uri)": "crwdns54:0crwdne54:0",
+  "add": "crwdns56:0crwdne56:0",
+  "remove(title)": "crwdns58:0crwdne58:0",
+  "remove": "crwdns60:0crwdne60:0",
+  "reset_shortcut": "crwdns62:0crwdne62:0",
+  "add(name,link)": "crwdns64:0crwdne64:0",
+  "remove(name)": "crwdns66:0crwdne66:0",
+  "reset_engine": "crwdns68:0crwdne68:0"
+}
