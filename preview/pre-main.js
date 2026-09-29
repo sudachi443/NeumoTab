@@ -3,7 +3,7 @@ async function load_storage(key){
   const data = JSON.parse(jsons);
   return data;
 };
-function save_localstorage(key,json){
+function save_storage(key,json){
   const data = JSON.stringify(json);
   localStorage.removeItem(key);
   localStorage.setItem(key,data);
@@ -114,10 +114,10 @@ async function list_shortcut(){
 async function initialization_json(){
   const engines = await load_storage('engines');
   const shortcuts = await load_storage('shortcuts');
-  if (engines === undefined){ 
+  if (engines === null){ 
     await reset_engine();
   };
-  if (shortcuts === undefined){
+  if (shortcuts === null){
     await reset_shortcut();
   };
 };

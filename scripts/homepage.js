@@ -63,9 +63,11 @@ async function createpage(){
   await loadengine();
   await loadshortcut();
 };
-
-createpage();
-
+async function main(){
+  await initialization_json();
+  createpage();
+};
+main();
 document.addEventListener("focusin", (e) => {
   e.target.scrollIntoView({
     behavior: "smooth",
