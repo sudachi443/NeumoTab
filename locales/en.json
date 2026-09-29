@@ -1,0 +1,19 @@
+{
+  "search":"検索",
+  "GUI_links":"for GUI Menu",
+  "import/export":"import/export settings",
+  "import/export file":"import/export file",
+  "shortcut":"shortcut",
+  "result:":"result:",
+  "download_setting":"download your settings",
+  "engine":"engine",
+  "import/export_link":"import/export your file (click here)",
+  "add(title,uri)":"add(title,uri)",
+  "add":"add",
+  "remove(title)":"remove(title)",
+  "remove":"remove",
+  "reset_shortcut":"reset shortcut!",
+  "add(name,link)":"add(name,link)",
+  "remove(name)":"remove(name)",
+  "reset_engine":"reset engine!"
+}

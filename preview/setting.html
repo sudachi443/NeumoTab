@@ -6,18 +6,21 @@
 <title>NeumoTab|advanced setting</title>
 </head>
 <body>
-<h1>import/export file</h1>
-<h2>NeumoTab|import/export files</h2>
-<pre id = "shortcuts"><code>result:</code></pre>
+<h1 data-i18n="import/export file">import/export file</h1>
+<h2 data-i18n="shortcut">shortcut</h2>
+<h3 data-i18n="result:">result:</h3>
+<pre id = "shortcuts"><code></code></pre>
 import:<input type ="file" id = "import_shortcut" accept=".json, json/plain"><br>
-export:<button id="export_shortcut" type="button">download your settings</button>
+export:<button id="export_shortcut" type="button" data-i18n="download_setting">download your settings</button>
 
 <hr>
 
-<h2>engine</h2>
+<h2 data-i18n="engine">engine</h2>
+<h3 data-i18n="result:">result:</h3>
 <pre id ="engines"><code>result:</code></pre>
 import:<input type ="file" id = "import_engine" accept=".json, json/plain"><br>
-export:<button id="export_engine" type="button">download your settings</button>
+export:<button id="export_engine" type="button" data-i18n="download_setting">download your settings</button>
 <script src='pre-main.js' defer></script>
 <script src='../scripts/setting.js' defer></script>
+<script src="pre-i18n.js" defer></script>
 </body>

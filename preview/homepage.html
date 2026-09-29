@@ -11,14 +11,15 @@
 <div id = "flex">
 <form id = "form">
   <svg class="pointer" width="10" height="10"><circle cx="3" cy="3" r="3" fill="blue" /></svg>
-  <input id="search-form" type="search" placeholder="search">
+  <input id="search-form" type="search" data-i18n-placeholder="search" placeholder="search">
 </form>
 <div id="engine"></div>
 </div>
 <div id="dashboard"></div>
-<a href="popup.html" style="position:fixed;top:8px;right:8px;font-size:24px;">for GUI Menu</a>
-<a href="setting.html" style="position:fixed;top:40px;right:8px;font-size:24px;">import/export settings</a>
+<a href="popup.html" style="position:fixed;top:8px;right:8px;font-size:24px;" data-i18n="GUI_links" >for GUI Menu</a>
+<a href="setting.html" style="position:fixed;top:40px;right:8px;font-size:24px;"data-i18n="import/export">import/export settings</a>
 </main>
 <script src="pre-main.js"></script>
 <script src="../scripts/homepage.js" defer></script>
+<script src="pre-i18n.js" defer></script>
 </body>

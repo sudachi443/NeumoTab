@@ -26,45 +26,46 @@ input {
 <body>
 <main>
 <h1>NeumoTab settings</h1>
-<a href="setting.html" target="_blank">import/export your file (click here)</a>
-<h2>shortcut</h2>
-<h3>add(title,uri)</h3>
+<a href="setting.html" target="_blank" data-i18n="import/export_link">import/export your file (click here)</a>
+<h2 data-i18n="shortcut">shortcut</h2>
+<h3 data-i18n="add(title,uri)">add(title,uri)</h3>
 <form id = "add_shortcut">
   <input id="add_shortcut_title" type="text" placeholder="title(ex:niconico)">
   <input id = "add_shortcut_uri" type="text" placeholder="uri(ex:https://nicovideo.jp/ranking"><br>
-  <button type="submit">add</button>
+  <button type="submit" data-i18n="add">add</button>
 </form>
-<h3>remove(title)</h3>
+<h3 data-i18n="remove(title)">remove(title)</h3>
 <form id = "remove_shortcut">
   <input id="remove_shortcut_title" type="text" placeholder="title(ex:niconico)"><br>
-  <button type="submit">remove</button>
+  <button type="submit"data-i18n="remove">remove</button>
 </form>
 <br>
 <form id = "reset_shortcut">
-  <button type ="submit">reset shortcut!</button>
+  <button type ="submit"data-i18n="reset_shortcut">reset shortcut!</button>
 </form>
-<h4>result:</h4>
+<h4 data-i18n="result:">result:</h4>
 <pre id = "result_shortcut"><code></code></pre>
 
 <hr>
 
-<h2>engine</h2>
-<h3>add(name,link)</h3>
+<h2 data-i18n="engine">engine</h2>
+<h3 data-i18n="add(name,link)">add(name,link)</h3>
 <form id = "add_engine">
   <input id="add_engine_name" type="text" placeholder="name(ex:google)">
   <input id = "add_engine_link" type="text" placeholder="link(ex:https://google.com/search?q="><br>
-  <button type="submit">add</button>
+  <button type="submit" data-i18n="add">add</button>
 </form>
-<h3>remove(name)</h3>
+<h3 data-i18n="remove(name)">remove(name)</h3>
 <form id = "remove_engine">
   <input id="remove_engine_name" type="text" placeholder="name(ex:google)"><br>
-  <button type="submit">remove</button>
+  <button type="submit" data-i18n="remove">remove</button>
 </form><br>
 <form id = "reset_engine">
-  <button type ="submit">reset engine!</button>
+  <button type ="submit"data-i18n="reset_engine">reset engine!</button>
 </form>
-<h4>result:</h4>
+<h4 data-i18n="result:">result:</h4>
 <pre id ="result_engine"><code></code></pre>
 <script src= 'pre-main.js' defer></script>
 <script src= '../scripts/popup.js' defer></script>
+<script src="pre-i18n.js" defer></script>
 </body>
