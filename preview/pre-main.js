@@ -1,23 +1,22 @@
 async function load_storage(key){
-  const result = await chrome.storage.local.get(key);
-  return result[key];
+  const jsons = localStorage.getItem(key);
+  const data = JSON.parse(jsons);
+  return data;
 };
-async function save_storage(key, data){
-  await chrome.storage.local.set({
-    [key]: data
-  });
-  const json = JSON.stringify(data);
-  return json
+function save_localstorage(key,json){
+  const data = JSON.stringify(json);
+  localStorage.removeItem(key);
+  localStorage.setItem(key,data);
+  return data;
 };
-
 async function reset_engine(){
-  const data = await fetch ("./json/engine.json").then(i => i.json());
+  const data = await fetch ("../json/engine.json").then(i => i.json());
   await save_storage('engines',data);
   console.log("engine is default");
   return data;
 };
 async function reset_shortcut(){
-  const data = await fetch ("./json/shortcut.json").then(i => i.json());
+  const data = await fetch ("../json/shortcut.json").then(i => i.json());
   await save_storage('shortcuts',data);
   console.log("shortcut_default");
   return data;

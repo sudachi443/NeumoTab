@@ -4,6 +4,9 @@ A minimal and customizable new-tab page for your browser.
 > - change json files for public
 > - create logo
 
+## Preview
+### preview is [here](https://sudachi443.github.io/NeumoTab/preview/homepage.html)
+
 ## Overview
 change your default newpage better!!!  
 show only what you want and enhance your life.  
