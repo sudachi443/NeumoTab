@@ -28,3 +28,5 @@ const params = new URLSearchParams(location.search);
 const locale =
   params.get("lang") ??
   (navigator.language.startsWith("ja") ? "ja" : "en");
+
+const i18n_ready = apply_locale(locale);
