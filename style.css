@@ -17,14 +17,37 @@ main > #flex{
   align-items: center;
   flex-direction:column;
   gap: 16px;
-  top:43%;
+  top:42%;
+}
+#icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 0px;
+  width: 560px;
+  position: relative;
+  z-index: 1;
+  bottom:48px;
+}
+
+#icon img:first-child {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+#icon img:last-child {
+  width: 256px;
+  height: auto;
+  object-fit: contain;
 }
 form {
     box-sizing: border-box;
     border: none;
     outline: none;
     appearance: none;
-    width: 560px;
+    width: 1024px;
     padding: 24px;
     background: #e0e0e0;
     box-shadow: inset 5px 5px 10px #b8b8b8,
@@ -68,10 +91,11 @@ form:focus-within .pointer{
 }
 #engine {
   display: flex;
-  width: 560px;
+  width: 1024px;
   flex-direction:row;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 #dashboard {
   display:block;

@@ -1,8 +1,12 @@
 # NeumoTab
-A minimal and customizable new-tab page for your browser.
+<p align="center">
+  <img src="/icons/icon.svg" alt="NeumoTab_logo" width="256">
+</p>
+<p align="center">
+  A minimal and customizable new-tab page for your browser.
+</p>
 ## TODO
 > - change json files for public
-> - create logo
 
 ## Preview
 ### preview is [here](https://sudachi443.github.io/NeumoTab/preview/homepage.html)
@@ -10,7 +14,7 @@ A minimal and customizable new-tab page for your browser.
 ## Overview
 change your default newpage better!!!  
 show only what you want and enhance your life.  
-> (TODO:add screenshot)
+![screemshot](/res/Screenshot.png)
 
 ## Features
 - search from your input
