@@ -13,12 +13,18 @@ async function loadengine() {
     const button = document.createElement("button");
     button.className = "searchengine";
     button.type = "button";
-    button.innerHTML = `
-        <svg class="pointer" width="10" height="10">
-            <circle cx="3" cy="3" r="3" fill="blue" />
-        </svg>
-        ${engine.name}
-    `;
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class","pointer");
+    svg.setAttribute("width", "10");
+    svg.setAttribute("height", "10");
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute("cx", "3");
+    circle.setAttribute("cy", "3");
+    circle.setAttribute("r", "3");
+    circle.setAttribute("fill", "blue");
+    svg.appendChild(circle);
+    button.appendChild(svg);
+    button.appendChild(document.createTextNode(engine.name));
     button.addEventListener("click", () => {
         const keyword = searchInput.value;
         const url = engine.link + encodeURIComponent(keyword);
@@ -46,11 +52,19 @@ async function loadshortcut() {
     const favicon_url = new URL(shortcut.uri).origin+"/favicon.ico";
     const alt = title.substr(0,1).toUpperCase();
     console.log(favicon_url);
-    button.innerHTML = `
-        <img src="${favicon_url}" alt="${alt}" style="width:50%;height:50%;object-fit:contain;font-size:16px;">
-        <br>
-        <span>${title}</span>
-    `;
+    const img = document.createElement("img");
+    img.src = favicon_url;
+    img.alt = alt;
+    img.style.width = "50%";
+    img.style.height = "50%";
+    img.style.objectFit = "contain";
+    img.style.fontSize = "16px";
+    const br = document.createElement("br");
+    const span = document.createElement("span");
+    span.textContent = title;
+    button.appendChild(img);
+    button.appendChild(br);
+    button.appendChild(span);
     button.addEventListener("click", () => {
       const url = shortcut.uri;
       window.location.href = url;
