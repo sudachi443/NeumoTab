@@ -1,32 +1,37 @@
 [
-  {"title":"YouTube",
-    "uri":"https://youtube.com"
+  {
+    "title": "YouTube",
+    "uri": "https://www.youtube.com"
   },
-  {"title":"niconico",
-    "uri":"https://nicovideo.jp"
+  {
+    "title": "Wikipedia",
+    "uri": "https://www.wikipedia.org"
   },
-  {"title":"Amazon",
-    "uri":"https://amazon.com"
+  {
+    "title": "GitHub",
+    "uri": "https://github.com"
   },
-  {"title":"Github",
-    "uri":"https://github.com"
+  {
+    "title": "Reddit",
+    "uri": "https://www.reddit.com"
   },
-  {"title":"Claude",
-    "uri":"https://claude.ai/"
+  {
+    "title": "OpenStreetMap",
+    "uri": "https://www.openstreetmap.org"
   },
-  {"title":"ChatGPT",
-    "uri":"https://chatgpt.com"
+  {
+    "title": "Mozilla",
+    "uri": "https://www.mozilla.org"
   },
-  {"title":"Gemini",
-    "uri":"https://gemini.google.com"
+  {
+    "title": "Gmail",
+    "uri": "https://mail.google.com"
   },
-  {"title":"map",
-    "uri":"https://www.openstreetmap.org"
+  {
+    "title": "Amazon",
+    "uri": "https://www.amazon.com"
   },
-  {"title":"Gmail",
-    "uri":"https://mail.google.com"
-  },
-  {"title":"archwiki",
-    "uri":"https://wiki.archlinux.org"
+  {"title":"X",
+    "uri":"https://x.com"
   }
 ]

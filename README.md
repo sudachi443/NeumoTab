@@ -5,8 +5,6 @@
 <p align="center">
   A minimal and customizable new-tab page for your browser.
 </p>
-## TODO
-> - change json files for public
 
 ## Preview
 ### preview is [here](https://sudachi443.github.io/NeumoTab/preview/homepage.html)
