@@ -33,7 +33,7 @@ async function initialization_json(){
     await reset_shortcut();
   };
 };
-browser.runtime.onInstalled.addListener(async (details) => {
+chrome.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === "install") {
     await initialization_json();
   }
